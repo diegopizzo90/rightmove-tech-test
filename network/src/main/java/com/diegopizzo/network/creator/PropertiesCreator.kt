@@ -4,11 +4,11 @@ import com.diegopizzo.network.model.AveragePrice
 import com.diegopizzo.network.model.Property
 import java.math.RoundingMode
 
-internal class PropertiesCreator {
-    fun getAveragePrice(
+internal class PropertiesCreator : IPropertiesCreator {
+    override fun getAveragePrice(
         properties: List<Property>,
-        scale: Int = 2,
-        roundingMode: RoundingMode = RoundingMode.HALF_UP
+        scale: Int,
+        roundingMode: RoundingMode
     ): AveragePrice {
         return AveragePrice(
             properties.mapNotNull { it.price }.average()

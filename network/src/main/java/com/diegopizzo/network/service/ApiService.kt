@@ -1,6 +1,6 @@
 package com.diegopizzo.network.service
 
-import com.diegopizzo.network.config.NetworkConstant.PROPERTIES_ENDPOINT
+import com.diegopizzo.network.service.NetworkConstant.PROPERTIES_ENDPOINT
 import com.diegopizzo.network.model.Properties
 import io.reactivex.Single
 import retrofit2.Response

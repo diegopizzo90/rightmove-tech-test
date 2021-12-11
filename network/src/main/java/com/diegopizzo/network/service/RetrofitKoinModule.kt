@@ -1,6 +1,5 @@
-package com.diegopizzo.network.config
+package com.diegopizzo.network.service
 
-import com.diegopizzo.network.service.ApiService
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory

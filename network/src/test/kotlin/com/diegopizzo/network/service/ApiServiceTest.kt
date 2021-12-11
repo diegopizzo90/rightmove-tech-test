@@ -1,6 +1,6 @@
 package com.diegopizzo.network.service
 
-import com.diegopizzo.network.config.NetworkConstant.PROPERTIES_ENDPOINT
+import com.diegopizzo.network.service.NetworkConstant.PROPERTIES_ENDPOINT
 import com.diegopizzo.network.model.Properties
 import com.diegopizzo.network.model.Property
 import com.diegopizzo.network.testutil.enqueueResponse
