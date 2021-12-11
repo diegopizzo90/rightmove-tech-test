@@ -17,3 +17,6 @@ internal data class Property(
 )
 
 internal data class Properties(val properties: List<Property>)
+
+@JvmInline
+value class AveragePrice(val average: String)
