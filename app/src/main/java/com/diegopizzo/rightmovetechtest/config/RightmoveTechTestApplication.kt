@@ -17,7 +17,8 @@ class RightmoveTechTestApplication : Application() {
             modules(
                 retrofitModule(BuildConfig.BASE_URL),
                 creatorModule,
-                interactorModule
+                interactorModule,
+                viewModelModule
             )
         }
     }
