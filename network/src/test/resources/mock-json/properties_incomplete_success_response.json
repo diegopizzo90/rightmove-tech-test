@@ -1,0 +1,19 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "price": 1000000
+    },
+    {
+      "id": 2,
+      "price": 100000,
+      "postcode": "SH1 1AW",
+      "propertyType": "TERRACED"
+    },
+    {
+      "id": 3,
+      "price": 225000,
+      "bedrooms": 5
+    }
+  ]
+}

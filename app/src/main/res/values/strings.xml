@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Rightmove Tech Test</string>
+    <string name="average_not_available">Average not available</string>
+    <string name="average_price_label">What is the average property price?</string>
 </resources>
