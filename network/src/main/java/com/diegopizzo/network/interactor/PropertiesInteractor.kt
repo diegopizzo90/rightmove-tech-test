@@ -6,6 +6,7 @@ import com.diegopizzo.network.creator.IPropertiesCreator
 import com.diegopizzo.network.model.AveragePrice
 import com.diegopizzo.network.service.ApiService
 import io.reactivex.Single
+import java.util.concurrent.TimeUnit
 
 internal class PropertiesInteractor(
     private val apiService: ApiService,
@@ -20,6 +21,6 @@ internal class PropertiesInteractor(
             }
         }.onErrorReturn {
             Result.Error()
-        }
+        }.delay(1L, TimeUnit.SECONDS) //Only added to simulate the wait time during a network request and show the progress bar in the UI layer
     }
 }
