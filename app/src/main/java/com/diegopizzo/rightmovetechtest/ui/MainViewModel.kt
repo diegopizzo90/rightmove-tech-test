@@ -53,7 +53,7 @@ class MainViewModel(
     }
 
     private fun onLoading() {
-        viewState = viewState.copy(isLoading = true)
+        viewState = viewState.copy(isLoading = true, averagePrice = "")
     }
 
     private fun onSuccess(averagePrice: String) {
