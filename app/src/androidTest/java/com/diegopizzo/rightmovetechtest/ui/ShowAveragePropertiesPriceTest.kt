@@ -26,25 +26,31 @@ class ShowAveragePropertiesPriceTest {
     fun showAveragePrice_isLoading_averageIsEmpty() {
         setContent(average = "", isLoading = true)
 
-        composeTestRule.onNode(hasText("What is the average property price?")).assertExists()
+        composeTestRule.onNode(hasText(AVERAGE_PRICE_LABEL)).assertExists()
         composeTestRule.onNode(hasText("")).assertExists()
         composeTestRule.onNode(hasProgressBarRangeInfo(Indeterminate)).assertExists()
     }
 
     @Test
     fun showAveragePrice_isLoadedWithSuccess_averageIsShown() {
-        setContent(average = "123456.98", isLoading = false)
+        setContent(average = AVERAGE_PRICE_VALUE, isLoading = false)
 
-        composeTestRule.onNode(hasText("What is the average property price?")).assertExists()
-        composeTestRule.onNode(hasText("123456.98")).assertExists()
+        composeTestRule.onNode(hasText(AVERAGE_PRICE_LABEL)).assertExists()
+        composeTestRule.onNode(hasText(AVERAGE_PRICE_VALUE)).assertExists()
         composeTestRule.onNode(hasProgressBarRangeInfo(Indeterminate)).assertDoesNotExist()
     }
 
     @Test
     fun showAveragePrice_isLoadedWithError_averageIsErrorMessageIsShown() {
         setContent(average = null, isLoading = false)
-        composeTestRule.onNode(hasText("What is the average property price?")).assertExists()
-        composeTestRule.onNode(hasText("Average not available")).assertExists()
+        composeTestRule.onNode(hasText(AVERAGE_PRICE_LABEL)).assertExists()
+        composeTestRule.onNode(hasText(AVERAGE_PRICE_ERROR_MESSAGE)).assertExists()
         composeTestRule.onNode(hasProgressBarRangeInfo(Indeterminate)).assertDoesNotExist()
+    }
+
+    companion object {
+        private const val AVERAGE_PRICE_LABEL = "What is the average property price?"
+        private const val AVERAGE_PRICE_ERROR_MESSAGE = "Average not available"
+        private const val AVERAGE_PRICE_VALUE = "123456.98"
     }
 }
