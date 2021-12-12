@@ -7,6 +7,8 @@ Simple UI created with Jetpack Compose that displays two texts in the middle of 
 **Architecture:**
 This project is based on MVVM pattern and written with Kotlin.
 
+**This project requires Java 11**
+
 # Third-party libraries
 **Koin**  
 Koin is a framework for the dependency injection.\
