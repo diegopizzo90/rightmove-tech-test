@@ -1,10 +1,11 @@
 package com.diegopizzo.network.service
 
-import com.diegopizzo.network.service.NetworkConstant.PROPERTIES_ENDPOINT
 import com.diegopizzo.network.model.Properties
 import com.diegopizzo.network.model.Property
+import com.diegopizzo.network.service.NetworkConstant.PROPERTIES_ENDPOINT
 import com.diegopizzo.network.testutil.enqueueResponse
 import com.google.gson.Gson
+import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -45,7 +46,7 @@ class ApiServiceTest {
     }
 
     @Test
-    fun getProperties_request_assertEqualsTrue() {
+    fun getProperties_recordedRequest_assertEqualsTrue() {
         successResponse()
 
         val request = server.takeRequest()
@@ -66,14 +67,14 @@ class ApiServiceTest {
 
     @Test
     fun getProperties_serverErrorResponse_assertEqualsTrue() {
-        server.enqueueResponse("properties_success_response.json", 500)
+        server.enqueue(MockResponse().setResponseCode(500))
         val response = api.getProperties().blockingGet()
         assertEquals(null, response.body())
     }
 
     @Test
     fun getProperties_clientErrorResponse_assertEqualsTrue() {
-        server.enqueueResponse("properties_success_response.json", 400)
+        server.enqueue(MockResponse().setResponseCode(400))
         val response = api.getProperties().blockingGet()
         assertEquals(null, response.body())
     }
