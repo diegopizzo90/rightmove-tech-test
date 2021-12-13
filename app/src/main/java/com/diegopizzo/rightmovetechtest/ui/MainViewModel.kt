@@ -1,12 +1,10 @@
 package com.diegopizzo.rightmovetechtest.ui
 
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.diegopizzo.network.base.Result
 import com.diegopizzo.network.interactor.IPropertiesInteractor
-import com.diegopizzo.rightmovetechtest.R
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -57,12 +55,11 @@ class MainViewModel(
     }
 
     private fun onSuccess(averagePrice: String) {
-        viewState =
-            viewState.copy(isLoading = false, averagePrice = averagePrice)
+        viewState = viewState.copy(isLoading = false, averagePrice = averagePrice)
     }
 
     private fun onError() {
-        viewState = viewState.copy(isLoading = false, null)
+        viewState = viewState.copy(isLoading = false, averagePrice = null)
     }
 
     override fun onCleared() {
