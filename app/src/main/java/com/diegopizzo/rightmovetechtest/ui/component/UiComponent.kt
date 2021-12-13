@@ -37,8 +37,16 @@ fun ShowAveragePropertiesPrice(average: String?, isLoading: Boolean?) {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun ShowAveragePropertiesPricePreview() {
     RightmoveTechTestTheme {
         ShowAveragePropertiesPrice("1234567.98", isLoading = true)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ShowAveragePropertiesPricePreview2() {
+    RightmoveTechTestTheme {
+        ShowAveragePropertiesPrice(null, isLoading = false)
     }
 }
