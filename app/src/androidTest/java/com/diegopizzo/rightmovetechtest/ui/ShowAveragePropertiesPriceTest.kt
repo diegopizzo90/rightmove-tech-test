@@ -41,7 +41,7 @@ class ShowAveragePropertiesPriceTest {
     }
 
     @Test
-    fun showAveragePrice_isLoadedWithError_averageIsErrorMessageIsShown() {
+    fun showAveragePrice_isLoadedWithError_averageErrorMessageIsShown() {
         setContent(average = null, isLoading = false)
         composeTestRule.onNode(hasText(AVERAGE_PRICE_LABEL)).assertExists()
         composeTestRule.onNode(hasText(AVERAGE_PRICE_ERROR_MESSAGE)).assertExists()
