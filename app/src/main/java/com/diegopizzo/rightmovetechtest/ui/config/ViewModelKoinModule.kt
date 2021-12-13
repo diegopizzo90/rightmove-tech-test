@@ -1,4 +1,4 @@
-package com.diegopizzo.rightmovetechtest.config
+package com.diegopizzo.rightmovetechtest.ui.config
 
 import com.diegopizzo.rightmovetechtest.ui.MainViewModel
 import io.reactivex.disposables.CompositeDisposable
